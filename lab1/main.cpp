@@ -12,10 +12,10 @@ void countingSort(const vector<pair<unsigned short, string> > &array,
     for (size_t i = 0; i < array.size(); ++i) {
         ++countingArray[array[i].first];
     }
-    for (size_t i = 1; i <= maxKey; ++i) {
+    for (unsigned int i = 1; i <= maxKey; ++i) {
         countingArray[i] += countingArray[i - 1];
     }
-    for (int i = array.size() - 1; i >= 0; --i) {
+    for (size_t i = array.size() - 1; i >= 0; --i) {
         sortedArray[countingArray[array[i].first] - 1] = array[i];
         --countingArray[array[i].first];
     }
